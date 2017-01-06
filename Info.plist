@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>gomjellie</string>
+	<key>Builder Version</key>
+	<string>11602.1.50.0.10</string>
+	<key>CFBundleDisplayName</key>
+	<string>jelly-translator</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.jelly-translator</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>global.html</string>
+				<key>Height</key>
+				<integer>400</integer>
+				<key>Identifier</key>
+				<string>pop_id</string>
+				<key>Width</key>
+				<integer>480</integer>
+			</dict>
+			<dict>
+				<key>Filename</key>
+				<string>popup.html</string>
+				<key>Height</key>
+				<integer>800</integer>
+				<key>Identifier</key>
+				<string>popup</string>
+				<key>Width</key>
+				<integer>600</integer>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>FancyIt</string>
+				<key>Identifier</key>
+				<string>identifier</string>
+				<key>Image</key>
+				<string>buttonLogo@2x.png</string>
+				<key>Include By Default</key>
+				<true/>
+				<key>Label</key>
+				<string>label</string>
+				<key>Palette Label</key>
+				<string>palette label</string>
+				<key>Popover</key>
+				<string>pop_id</string>
+				<key>Tool Tip</key>
+				<string>tooltip</string>
+			</dict>
+			<dict>
+				<key>Identifier</key>
+				<string>panda_id</string>
+				<key>Image</key>
+				<string>panda@2x.png</string>
+				<key>Include By Default</key>
+				<true/>
+				<key>Label</key>
+				<string>panda</string>
+				<key>Palette Label</key>
+				<string>panda_label</string>
+				<key>Popover</key>
+				<string>popup</string>
+				<key>Tool Tip</key>
+				<string>panda_tooltip</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Description</key>
+	<string>translator</string>
+	<key>DeveloperIdentifier</key>
+	<string>0000000000</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Website</key>
+	<string>https://gomjellie.github.io/jelly-translator</string>
+</dict>
+</plist>
