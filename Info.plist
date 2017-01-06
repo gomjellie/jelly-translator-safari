@@ -33,12 +33,10 @@
 			<dict>
 				<key>Filename</key>
 				<string>popup.html</string>
-				<key>Height</key>
-				<integer>800</integer>
 				<key>Identifier</key>
 				<string>popup</string>
 				<key>Width</key>
-				<integer>600</integer>
+				<integer>350</integer>
 			</dict>
 		</array>
 		<key>Toolbar Items</key>

@@ -1,10 +1,125 @@
 <!DOCTYPE HTML>
 <html>
 
-<head></head>
+<head>
+    <style>
+    body {
+        width: 350px;
+        height: auto;
+        font-family: "Helvetica-Light", "roboto", sans-serif;
+        background-color: #FFFFFF;
+        color: #454545;
+    }
+
+    textarea {
+        font-family: "Helvetica-Light", 'roboto', sans-serif;
+        font-size: 0.8rem;
+        width: 100%;
+        border: none;
+        outline: none;
+        overflow: hidden;
+        position: relative;
+        margin-top: 10px;
+        resize: none;
+        <!-- 디자인은 깔끔해지는데 드래그해서 크기조절 안됨-->
+    }
+
+    a:link {
+        text-decoration: none;
+        color: red;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: red;
+    }
+
+    a:active {
+        text-decoration: none;
+        color: #333333;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: red;
+    }
+
+    p {
+        font-family: "Helvetica-Light", "sans-serif";
+        font-size: 0.8rem;
+        color: #ed894d;
+        font-weight: bold;
+        padding-top: 1em;
+        border-top: 1px solid #ccc;
+    }
+
+    #translateBtn {
+        width: 19em;
+        font-family: "Helvetica-Light", "roboto";
+        font-size: 17px;
+        padding-top: 1px;
+        padding-bottom: 2px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        outline: none;
+        background-color: #454545;
+        /*#ffc3e1 pink*/
+        color: #FFFFFF;
+    }
+
+    .translateBtn:hover {
+        background-color: #454545;
+        /*#ffc3e1 pink*/
+        color: #FFFFFF;
+    }
+
+    .translateBtn:checked {
+        color: #FFFFFF;
+    }
+
+    .translateBtn:active {
+        background-color: #505050;
+        color: #FFFFFF;
+        position: relative;
+        top: 1px;
+        bottom: 2px;
+    }
+
+    #result {
+        font-family: "Helvetica-Light", "roboto";
+        font-size: 1rem;
+        font-weight: bold;
+        padding-bottom: 1em;
+    }
+
+    #footer {
+        font-family: "roboto", "Helvetica-Light", sans-serif;
+        font-size: 9px;
+        padding: 0.5em 0em 0.5em 0em;
+    }
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+</head>
 
 <body>
-	<img src="img/panda.png"></img>
-</body>
+    <div class="ui container">
+        <div class="ui header">
+        </div>
+        <textarea id="src" rows="3" placeholder="JellyTranslator" autofocus></textarea>
+        <!--input type="TEXT" id = "src" rows="3" placeholder = "translate" autofocus></input-->
+        <br>
+        <p>RESULT</p>
+        <div id="result" class="ui value"></div>
+        <input type="button" id="translateBtn" class="translateBtn" value="Translate This Page" />
+        <br/>
+    </div>
+    <footer>
+        <div id="ui footer" align="center">
+            &copy; 2016 <a href="http://gomjellie.github.io" target="_blank" title="blog">gomjellie</a> <a id="options-link" target="_blank" href="options.html">options</a>
+        </div>
+    </footer>
 
 </html>
