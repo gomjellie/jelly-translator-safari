@@ -1,6 +1,8 @@
 // This js code was extracted from http://translate.google.com/translate/releases/twsfe_w_20160104_RC00/r/js/desktop_module_main.js
 // The vM function is used to calculate the tk value.
 
+var tar_lang = "ko";
+
 k = "",
     cb = "&",
     Gf = "=",
@@ -63,7 +65,6 @@ var url = "https://translate.google.com/translate_a/single?client=t&sl=en&tl=ko&
 var base_url = "https://translate.google.com/translate_a/single?client=t&sl=auto&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&ie=UTF-8&oe=UTF-8&otf=1&ssel=0&tsel=0&kc=7&";
 
 function translate(what_to_search) {
-    tar_lang = "ko";
     req = new XMLHttpRequest();
     url = base_url + "tl=" + tar_lang + "&hl=" + tar_lang + "&tk=" + vM(what_to_search) + "&q=" + encodeURIComponent(what_to_search);
     req.open("GET", url, true);
@@ -84,25 +85,6 @@ function translate(what_to_search) {
                 return ret;
             }else {
                 document.querySelector('#result').innerText = "error occured o_O";
-                return req.responseURL;
-            }
-        }
-    }
-    req.send();
-}
-
-function send_request(url){
-    req = new XMLHttpRequest();
-    req.open("GET", url, true);
-
-    req.onreadystatechange = function(aEvt) {
-        if (req.readyState == 4) {
-            //readyState 는 0 ~ 4 까지 있는데 1은 send를 호출하기전,
-            //3은 일부를 받은상태, 4는 데이터를 전부 받은상태이다.
-            if (req.status == 200) { //status code 200 means OK
-
-                return req;
-            }else {
                 return req.responseURL;
             }
         }
