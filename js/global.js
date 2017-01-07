@@ -1,14 +1,13 @@
-safari.application.addEventListener("message", messageHandler, false);
-safari.extension.settings.addEventListener("change", changeHandler, false);
-
-function messageHandler(e) {
-    if (e.name === "getSettings") {
-        e.target.page.dispatchMessage("setSettings", {
-        	tar_lang: safari.extension.settings.getItem('tar_lang')
-        });
+var handleMessage = function(event) {
+    if (event.name == 'load') {
+        var ret = safari.extension.settings.tar_lang;
+        event.target.page.dispatchMessage("get_lang", ret);
+    } else if (event.name == 'save') {
+        safari.extension.settings = {
+         	tar_lang: event.message
+         }
+        alert("saved" + event.message);
     }
 }
 
-function changeHandler(e) {
-    console.log("settingsChanged: " + e.name + "; " + e.target);
-}
+safari.application.addEventListener("message", handleMessage, false);
