@@ -1,4 +1,4 @@
-var tar_lang = "ko";
+var tar_lang;
 
 var setLang = function (tar_lang) {
     safari.self.tab.dispatchMessage("save", tar_lang);
@@ -18,5 +18,5 @@ var getLang = function (event) {
 
 safari.self.addEventListener("message", getLang, false);
 
-setLang("ja");
-fetch_lang();
+// setLang("ja");
+// fetch_lang();

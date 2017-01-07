@@ -15,7 +15,8 @@ $("#target").submit(function(event) {
 $("select").change(function() {
     var lang_selected = $(this).val();
     if (lang_selected) {
-        alert("select changed " + lang_selected);
-        safari.extension.settings.tar_lang = lang_selected;
+        setLang(lang_selected);
+        //alert("select changed " + lang_selected);
+        //safari.extension.settings.tar_lang = lang_selected;
     }
 })
