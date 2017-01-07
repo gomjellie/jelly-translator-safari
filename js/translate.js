@@ -61,9 +61,11 @@ sM = function(a) {
 //TK 값은 vM("string what you want to translate here"); 의 반환값을 가져다 쓰면된다!
 var url = "https://translate.google.com/translate_a/single?client=t&sl=en&tl=ko&hl=ko&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&ie=UTF-8&oe=UTF-8&otf=1&srcrom=0&ssel=0&tsel=0&kc=1&tk=693132.842370&q=if%20i%20were%20you";
 var base_url = "https://translate.google.com/translate_a/single?client=t&sl=auto&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&ie=UTF-8&oe=UTF-8&otf=1&ssel=0&tsel=0&kc=7&";
+var tar_lang;
+
+
 
 function translate(string_to_translate) {
-    var tar_lang;
     if(typeof safari.extension.settings.getItem('tar_lang') == 'undefined'){
         tar_lang = "ko";
     }else {
@@ -81,14 +83,14 @@ function translate(string_to_translate) {
             if (req.status == 200) { //status code 200 means OK
                 var res_arr = eval(req.responseText);
                 //alert(res_arr[0][0][0]);
-                var len = res_arr[0].length-1;
-                ret="";
-                for(var i=0;i<len;i++){
-                    ret+=res_arr[0][i][0];
+                var len = res_arr[0].length - 1;
+                ret = "";
+                for (var i = 0; i < len; i++) {
+                    ret += res_arr[0][i][0];
                 }
                 document.querySelector('#result').innerText = ret;
                 return ret;
-            }else {
+            } else {
                 document.querySelector('#result').innerText = "error occured o_O";
                 return req.responseURL;
             }
