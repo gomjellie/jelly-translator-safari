@@ -1,3 +1,11 @@
+safari.self.addEventListener('message', handleMessage, false);
+safari.self.tab.dispatchMessage('getSetting', 'tar_lang');
+function handleMessage(msg){
+    if(msg.name === 'returnSetting'){
+        var setting = msg.message;
+    }
+}
+
 $(document).ready(function() {
     $('select').niceSelect();
 });

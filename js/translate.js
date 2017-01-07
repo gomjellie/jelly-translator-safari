@@ -1,7 +1,6 @@
 // This js code was extracted from http://translate.google.com/translate/releases/twsfe_w_20160104_RC00/r/js/desktop_module_main.js
 // The vM function is used to calculate the tk value.
 
-
 k = "",
     cb = "&",
     Gf = "=",
