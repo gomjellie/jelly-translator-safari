@@ -50,3 +50,15 @@ var openNewTab = function(url) {
     var newTab = safari.application.activeBrowserWindow.openTab(); // Open a new tab
     newTab.url = url;
 }
+
+
+$(function() {
+    $("#translateBtn").click(function(e) {
+        //translatePage();
+        document.querySelector('#result').innerText = safari.application.activeBrowserWindow.activeTab.url;
+        current_url = safari.application.activeBrowserWindow.activeTab.url;
+        translatePage(current_url);
+        //document.querySelector('#result').innerText = "There are too many bugs to stop \n'page-translate' service for a while.\n Sorry ";
+
+    });
+});

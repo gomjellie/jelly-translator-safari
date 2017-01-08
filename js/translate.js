@@ -63,9 +63,9 @@ var url;
 var base_url = "https://translate.google.com/translate_a/single?client=t&sl=auto&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&ie=UTF-8&oe=UTF-8&otf=1&ssel=0&tsel=0&kc=7&";
 
 function translate(string_to_translate) {
-    if(typeof safari.extension.settings.getItem('tar_lang') == 'undefined'){
+    if (typeof safari.extension.settings.getItem('tar_lang') == 'undefined') {
         tar_lang = "ko";
-    }else {
+    } else {
         tar_lang = safari.extension.settings.getItem('tar_lang');
         //document.querySelector('#result').innerText = tar_lang;
     }
@@ -94,4 +94,18 @@ function translate(string_to_translate) {
         }
     }
     req.send();
+}
+
+
+var page_base_url = "https://translate.google.com/translate?sl=auto&js=y&prev=_t&ie=UTF-8&edit-text=&act=url";
+
+function translatePage(current_url) {
+    if (typeof safari.extension.settings.getItem('tar_lang') == 'undefined') {
+        tar_lang = "ko";
+    } else {
+        tar_lang = safari.extension.settings.getItem('tar_lang');
+        //document.querySelector('#result').innerText = tar_lang;
+    }
+    var translated_url = page_base_url + "&tl=" + tar_lang + "&hl=" + tar_lang + "&u=" + encodeURIComponent(current_url);
+    safari.application.activeBrowserWindow.activeTab.url = translated_url;
 }
