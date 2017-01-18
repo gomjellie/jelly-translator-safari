@@ -1,6 +1,31 @@
+//$('#sel').niceSelect();
 
-$(document).ready(function() {
-    $('select').niceSelect();
+jQuery(document).ready(function($) {
+    fetch_apply_settings();
+});
+
+$("#cmn-toggle-selection-translate").change(function() {
+    if ($(this).is(':checked')) {
+        set_page(true);
+    } else {
+        set_page(false);
+    }
+});
+
+$("#cmn-toggle-page-translate").change(function() {
+    if ($(this).is(':checked')) {
+        set_selection(true);
+    } else {
+        set_selection(false);
+    }
+});
+
+$("#saveBtn").click(function() {
+    alert("saveBtn clicked");
+});
+
+$("#resetBtn").click(function() {
+    alert("resetBtn clicked");
 });
 
 $("#target").submit(function(event) {
@@ -19,4 +44,4 @@ $("select").change(function() {
         //alert("select changed " + lang_selected);
         //safari.extension.settings.tar_lang = lang_selected;
     }
-})
+});
